@@ -1,11 +1,11 @@
-//Life Form 1: Glowing Bacteria
+//Life Form 1: Glowing Cell
 //This life form is similar to the Mycoplasma but glows over time. 
 //The cell will start with a random color and as it lives on to the next generation, the color will slowly shift to a brighter shade.
 
-public class GlowingBacteria extends Organism {
+public class GlowingCell extends Cell {
     private Color color;
 
-    public GlowingBacteria(int x, int y) {
+    public GlowingCell(int x, int y) {
         super(x, y);
         color = new Color((int)(Math.random() * 255), (int)(Math.random() * 255), (int)(Math.random() * 255));
     }
