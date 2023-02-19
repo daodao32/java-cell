@@ -1,0 +1,28 @@
+//Life Form 3: Growing Plants
+//This life form simulates the growth of plants. 
+//Plants start as seeds, and will grow into a larger plant over time. 
+//Each plant cell will die after a certain number of updates, but will leave behind new seeds that will grow into new plants.
+
+public class GrowingCell extends Cell {
+    private int age;
+    private int maxAge;
+    private boolean isSeed;
+
+    public Plant(int x, int y) {
+        super(x, y);
+        age = 0;
+        maxAge = (int)(Math.random() * 10) + 5;
+        isSeed = true;
+    }
+
+    @Override
+    public void update() {
+        if (isSeed) {
+            if (age >= 3) {
+                isSeed = false;
+                alive = true;
+            }
+        } else {
+            if (age >= maxAge) {
+                alive = false;
+                if (countEmptyNeighbors() > 0) {
